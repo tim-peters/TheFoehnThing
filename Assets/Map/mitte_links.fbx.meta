@@ -1,0 +1,144 @@
+fileFormatVersion: 2
+guid: b84d3d01780cd4640bc5a4e8fef81f5e
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: mitte_links_2
+    100004: mitte_links_2_MeshPart0
+    100006: mitte_links_2_MeshPart1
+    100008: mitte_links_2_MeshPart10
+    100010: mitte_links_2_MeshPart11
+    100012: mitte_links_2_MeshPart12
+    100014: mitte_links_2_MeshPart13
+    100016: mitte_links_2_MeshPart14
+    100018: mitte_links_2_MeshPart15
+    100020: mitte_links_2_MeshPart2
+    100022: mitte_links_2_MeshPart3
+    100024: mitte_links_2_MeshPart4
+    100026: mitte_links_2_MeshPart5
+    100028: mitte_links_2_MeshPart6
+    100030: mitte_links_2_MeshPart7
+    100032: mitte_links_2_MeshPart8
+    100034: mitte_links_2_MeshPart9
+    400000: //RootNode
+    400002: mitte_links_2
+    400004: mitte_links_2_MeshPart0
+    400006: mitte_links_2_MeshPart1
+    400008: mitte_links_2_MeshPart10
+    400010: mitte_links_2_MeshPart11
+    400012: mitte_links_2_MeshPart12
+    400014: mitte_links_2_MeshPart13
+    400016: mitte_links_2_MeshPart14
+    400018: mitte_links_2_MeshPart15
+    400020: mitte_links_2_MeshPart2
+    400022: mitte_links_2_MeshPart3
+    400024: mitte_links_2_MeshPart4
+    400026: mitte_links_2_MeshPart5
+    400028: mitte_links_2_MeshPart6
+    400030: mitte_links_2_MeshPart7
+    400032: mitte_links_2_MeshPart8
+    400034: mitte_links_2_MeshPart9
+    2300000: mitte_links_2_MeshPart0
+    2300002: mitte_links_2_MeshPart1
+    2300004: mitte_links_2_MeshPart10
+    2300006: mitte_links_2_MeshPart11
+    2300008: mitte_links_2_MeshPart12
+    2300010: mitte_links_2_MeshPart13
+    2300012: mitte_links_2_MeshPart14
+    2300014: mitte_links_2_MeshPart15
+    2300016: mitte_links_2_MeshPart2
+    2300018: mitte_links_2_MeshPart3
+    2300020: mitte_links_2_MeshPart4
+    2300022: mitte_links_2_MeshPart5
+    2300024: mitte_links_2_MeshPart6
+    2300026: mitte_links_2_MeshPart7
+    2300028: mitte_links_2_MeshPart8
+    2300030: mitte_links_2_MeshPart9
+    3300000: mitte_links_2_MeshPart0
+    3300002: mitte_links_2_MeshPart1
+    3300004: mitte_links_2_MeshPart10
+    3300006: mitte_links_2_MeshPart11
+    3300008: mitte_links_2_MeshPart12
+    3300010: mitte_links_2_MeshPart13
+    3300012: mitte_links_2_MeshPart14
+    3300014: mitte_links_2_MeshPart15
+    3300016: mitte_links_2_MeshPart2
+    3300018: mitte_links_2_MeshPart3
+    3300020: mitte_links_2_MeshPart4
+    3300022: mitte_links_2_MeshPart5
+    3300024: mitte_links_2_MeshPart6
+    3300026: mitte_links_2_MeshPart7
+    3300028: mitte_links_2_MeshPart8
+    3300030: mitte_links_2_MeshPart9
+    4300000: mitte_links_2_MeshPart0
+    4300002: mitte_links_2_MeshPart1
+    4300004: mitte_links_2_MeshPart2
+    4300006: mitte_links_2_MeshPart3
+    4300008: mitte_links_2_MeshPart4
+    4300010: mitte_links_2_MeshPart5
+    4300012: mitte_links_2_MeshPart6
+    4300014: mitte_links_2_MeshPart7
+    4300016: mitte_links_2_MeshPart8
+    4300018: mitte_links_2_MeshPart9
+    4300020: mitte_links_2_MeshPart10
+    4300022: mitte_links_2_MeshPart11
+    4300024: mitte_links_2_MeshPart12
+    4300026: mitte_links_2_MeshPart13
+    4300028: mitte_links_2_MeshPart14
+    4300030: mitte_links_2_MeshPart15
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
