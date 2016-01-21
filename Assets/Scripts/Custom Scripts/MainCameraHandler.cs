@@ -62,13 +62,29 @@ public class MainCameraHandler : MonoBehaviour
 		set { _isSwitching = value; }
 	}
 
+	private float _velocityX = 0.0f;
+	public float velocityX {
+		get { return _velocityX; }
+		set { _velocityX = value; }
+	}
+
+	private float _velocityY = 0.0f;
+	public float velocityY {
+		get { return _velocityY; }
+		set { _velocityY = value; }
+	}
+
+	private bool _showMode = false;
+	public bool showMode {
+		get { return _showMode; }
+		set { _showMode = value; }
+	}
+
 	#endregion
 	#region privateVariables
 	private MountainHandler mountainHandler;
 	private CompassModel compassModel;
 	private ChangePiece changePiece;
-	private float velocityX = 0.0f;
-	private float velocityY = 0.0f;
 	private float offsetY = 5; // in °
 	private float zoomInput;
 	private Vector3 position;
@@ -83,6 +99,7 @@ public class MainCameraHandler : MonoBehaviour
 				oldRotation;
 	private Vector3 compassPosition = new Vector3(0f,47f,-8.7f);
 	private Vector3 compassRotation = new Vector3(90f,0f,0f);
+	private float showModeXSpeed = 0.03f;
 	#endregion
 
 	void Start()
@@ -119,27 +136,30 @@ public class MainCameraHandler : MonoBehaviour
 					if(touchCount == 0) {
 						deltaReset = true;
 						multiDeltaReset = true;
-					} else if(!UICamera.hoveredObject) {
-						if(deltaReset)
-							deltaReset = false;
-						else {
-							W7Touch touch_1 = W7TouchManager.GetTouch(0);
-							if(touchCount >= 2) { // swipe gesture recognition
-								if(multiDeltaReset)
-									multiDeltaReset = false;
-								else {
-									W7Touch touch_2 = W7TouchManager.GetTouch(1);
-									float prevDistance = Vector2.Distance((touch_1.Position - touch_1.DeltaPosition), (touch_2.Position - touch_2.DeltaPosition));
-									float curDistance = Vector2.Distance(touch_1.Position, touch_2.Position);
-									zoomInput = (curDistance-prevDistance)*0.01f;
+					} else {
+						showMode = false;
+						if(!UICamera.hoveredObject) {
+							if(deltaReset)
+								deltaReset = false;
+							else {
+								W7Touch touch_1 = W7TouchManager.GetTouch(0);
+								if(touchCount >= 2) { // swipe gesture recognition
+									if(multiDeltaReset)
+										multiDeltaReset = false;
+									else {
+										W7Touch touch_2 = W7TouchManager.GetTouch(1);
+										float prevDistance = Vector2.Distance((touch_1.Position - touch_1.DeltaPosition), (touch_2.Position - touch_2.DeltaPosition));
+										float curDistance = Vector2.Distance(touch_1.Position, touch_2.Position);
+										zoomInput = (curDistance-prevDistance)*0.01f;
+									}
+								} else { // drag gesture recognition
+									multiDeltaReset = true;
+									zoomInput = 0;
+									velocityX *= 0.5f;
+									velocityY *= 0.5f;
+									velocityX += xSpeed * touch_1.DeltaPosition.x * distance * 0.1f;
+									velocityY += ySpeed * touch_1.DeltaPosition.y * 0.1f;
 								}
-							} else { // drag gesture recognition
-								multiDeltaReset = true;
-								zoomInput = 0;
-								velocityX *= 0.5f;
-								velocityY *= 0.5f;
-								velocityX += xSpeed * touch_1.DeltaPosition.x * distance * 0.1f;
-								velocityY += ySpeed * touch_1.DeltaPosition.y * 0.1f;
 							}
 						}
 					}
@@ -151,14 +171,23 @@ public class MainCameraHandler : MonoBehaviour
 						velocityY *= 0.5f;
 						velocityX += xSpeed * Input.GetAxis("Mouse X") * distance * 0.3f;
 						velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.3f;
+
+						showMode = false;
 					}
 					zoomInput = Input.GetAxis("Mouse ScrollWheel");
 				}
 				}
-			
+
 			// Add "drag force" to rotations
-			rotationYAxis += velocityX;
-			rotationXAxis -= velocityY;
+			if(!showMode) {
+				rotationYAxis += velocityX;
+				rotationXAxis -= velocityY;
+			} else {
+				rotationXAxis += showModeXSpeed;
+				if(rotationXAxis >= 40 || rotationXAxis <= yMinLimit) showModeXSpeed *= -1;
+				rotationYAxis -= 0.1f;
+				zoomInput = -0.005f;
+			}
 			
 			rotationXAxis = ClampAngle(rotationXAxis, yMinLimit, yMaxLimit);
 			

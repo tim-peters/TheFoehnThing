@@ -125,7 +125,10 @@ public class AllWindParticles : MonoBehaviour {
 				points [pointsI].position = pointsArchiv[trailI][ii].position; 
 				Color actualColor = pointsArchiv[trailI][ii].color;
 				//points [pointsI].color = (randomPositioning) ? new Color(actualColor.r,actualColor.g,actualColor.b,1f-(n*(1f/trailLength))) : actualColor;
-				points[pointsI].color = new Color(actualColor.r, actualColor.g, actualColor.b, 1f-(n*(1f/trailLength)));
+				if(Physics.Linecast(points [pointsI].position,Camera.main.transform.position))
+					points[pointsI].color = Color.Lerp(new Color(actualColor.r, actualColor.g, actualColor.b, 1f-(n*(1f/trailLength))),Color.black,0.6f);
+				else
+					points[pointsI].color = new Color(actualColor.r, actualColor.g, actualColor.b, 1f-(n*(1f/trailLength)));
 				points [pointsI].size = sizeOfParticles;
 				pointsI++;
 			}

@@ -48,7 +48,10 @@ public class AllCloudParticle : MonoBehaviour {
 			if(particles[n].visible)
 			{
 				points[i].position = particles[n].position;
-				points[i].color = new Color(.5f,.5f,.5f,particles[n].opacity);
+				if(Physics.Linecast(points [i].position,Camera.main.transform.position))
+					points[i].color = Color.Lerp(new Color(1f,1f,1f,particles[n].opacity),new Color(0,0,0,particles[n].opacity),0.6f);
+				else
+				points[i].color = new Color(1f,1f,1f,particles[n].opacity);
 				points[i].size = particles[n].size;
 				points[i].rotation = particles[n].rotation;
 				i++;

@@ -16,7 +16,7 @@ public class CloudParticle {
 	public float rotation;
 	public bool visible = true;
 	private Vector3 direction;
-	private float maxOpacity = 0.8f;
+	private float maxOpacity = 0.5f;
 	private float movementSpeed = 0.005f;
 	private float increaseFactor = 0.008f;
 	private float decreaseFactor = 0.006f;
