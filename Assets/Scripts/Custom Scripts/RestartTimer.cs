@@ -22,8 +22,9 @@ public class RestartTimer : MonoBehaviour {
 	}
 
 	void LateUpdate () {
-		if(Input.GetMouseButton(0) && !mainCameraHandler.showMode)
+		if(Input.GetMouseButton(0) || mainCameraHandler.showCompass) {
 			lastInputTime = Time.realtimeSinceStartup;
+		}
 
 		if(Time.realtimeSinceStartup-lastInputTime >= timeUntilShowmode)
 			resetAndRestart();

@@ -74,6 +74,12 @@ public class MainCameraHandler : MonoBehaviour
 		set { _velocityY = value; }
 	}
 
+	private bool _showCompass = false;
+	public bool showCompass {
+		get { return _showCompass; }
+		set { _showCompass = value; }
+	}
+
 	private bool _showMode = false;
 	public bool showMode {
 		get { return _showMode; }
@@ -94,8 +100,7 @@ public class MainCameraHandler : MonoBehaviour
 	private Vector3 compassCameraDirectionEuler = new Vector3(90,0,0);
 	private Vector3[,] leavingCameraPositions = new Vector3[16,3];
 	private Vector3[] rotationMiddle;
-	private bool showCompass = false;
-	private Vector3 oldPosition, 
+	private Vector3 oldPosition,
 				oldRotation;
 	private Vector3 compassPosition = new Vector3(0f,47f,-8.7f);
 	private Vector3 compassRotation = new Vector3(90f,0f,0f);

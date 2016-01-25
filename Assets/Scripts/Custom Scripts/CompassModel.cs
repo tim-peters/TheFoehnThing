@@ -36,7 +36,8 @@ public class CompassModel : MonoBehaviour {
 		- fade in ui elements of compass
 	*/
 	public void startCompassMode(int pieceId) {
-		active = true; 
+		active = true;
+		mainCameraHandler.showMode = false;
 		currentPiece = pieceId;
 		mountainHandler.dropPiece (pieceId,0f);
 		mainCameraHandler.startCompassView (pieceId);
