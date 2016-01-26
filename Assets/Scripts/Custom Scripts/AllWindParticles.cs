@@ -135,7 +135,7 @@ public class AllWindParticles : MonoBehaviour {
 			if(trailI-- <= 0) trailI = trailLength-1;
 			n++;
 		}
-		particleSystem.SetParticles (points, points.Length);
+		GetComponent<ParticleSystem>().SetParticles (points, points.Length);
 		pointsArchivI = (pointsArchivI+1 >= trailLength) ? 0 : pointsArchivI+1;
 	}
 

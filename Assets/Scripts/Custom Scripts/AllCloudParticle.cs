@@ -57,6 +57,6 @@ public class AllCloudParticle : MonoBehaviour {
 				i++;
 			}
 		}
-		particleSystem.SetParticles (points, points.Length);
+		GetComponent<ParticleSystem>().SetParticles (points, points.Length);
 	}
 }

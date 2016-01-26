@@ -110,7 +110,7 @@ public class MountainHandler : MonoBehaviour {
 	}
 
 	private void updateMapColor(float val, GameObject mapPiece) {
-		mapPiece.renderer.material.color = new Color(val,val,val);	
+		mapPiece.GetComponent<Renderer>().material.color = new Color(val,val,val);	
 	}
 	
 	private void startParticles(){

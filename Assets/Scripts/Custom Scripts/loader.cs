@@ -13,7 +13,7 @@ public class loader : MonoBehaviour {
 
 	void Update () {
 		if(isloading == 1) {
-			progressTxt.guiText.text = "loading...";
+			progressTxt.GetComponent<GUIText>().text = "loading...";
 			isloading++;
 			Application.LoadLevel("mainScene");
 		} else {
